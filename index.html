@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>¡Felices 21! 🎂</title>
+<title>Felices 21 💖</title>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@400;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@400;600&display=swap');
 
   * { box-sizing: border-box; }
 
@@ -13,7 +13,7 @@
     margin: 0;
     height: 100vh;
     overflow: hidden;
-    background: radial-gradient(circle at top, #ffe29f, #ffa99f, #ff719a);
+    background: radial-gradient(circle at top, #ffd1dc, #ff9a9e, #f78fb3);
     font-family: 'Quicksand', sans-serif;
     color: #fff;
     text-align: center;
@@ -24,71 +24,62 @@
     top: 50%;
     transform: translateY(-50%);
     margin: auto;
-    max-width: 430px;
-    padding: 40px 30px;
-    background: rgba(255,255,255,0.18);
-    border-radius: 32px;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 30px 70px rgba(0,0,0,0.25);
-    animation: aparecer 1.5s ease;
+    max-width: 440px;
+    padding: 42px 32px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 34px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 35px 80px rgba(0,0,0,0.25);
+    animation: aparecer 1.6s ease;
     z-index: 2;
   }
 
   h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.6em;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   p {
     font-size: 1.15em;
     opacity: 0.95;
+    line-height: 1.5;
   }
 
   button {
-    margin-top: 28px;
-    padding: 16px 36px;
+    margin-top: 30px;
+    padding: 16px 38px;
     border: none;
     border-radius: 50px;
-    background: linear-gradient(135deg, #ff6f61, #ff9671);
+    background: linear-gradient(135deg, #ff4d6d, #ff85a1);
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 12px 30px rgba(255,111,97,0.7);
+    box-shadow: 0 14px 35px rgba(255,77,109,0.7);
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
   button:hover {
-    transform: scale(1.06);
-    box-shadow: 0 18px 40px rgba(255,111,97,0.9);
+    transform: scale(1.07);
+    box-shadow: 0 20px 45px rgba(255,77,109,0.9);
   }
 
   #mensaje {
-    margin-top: 26px;
+    margin-top: 28px;
     font-size: 1.25em;
-    line-height: 1.55;
-    animation: fadeIn 1.4s ease;
-  }
-
-  .heart, .confeti {
-    position: absolute;
-    animation: flotar linear infinite;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease;
   }
 
   .heart {
+    position: absolute;
     color: rgba(255,255,255,0.9);
-  }
-
-  .confeti {
-    width: 8px;
-    height: 8px;
-    background: rgba(255,255,255,0.9);
-    transform: rotate(45deg);
+    animation: flotar linear infinite;
   }
 
   @keyframes flotar {
-    0% { transform: translateY(110vh) scale(0.7); opacity: 1; }
-    100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    0% { transform: translateY(110vh) scale(0.8); opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.4); opacity: 0; }
   }
 
   @keyframes aparecer {
@@ -106,19 +97,22 @@
 <body>
 
 <div class="card">
-  <h1>🎂 ¡Felices 21! 🎉</h1>
-  <p>Hoy celebramos tu vida y todo lo bonito que eres ✨</p>
-  <button onclick="mostrar()">Abrir sorpresa 🎁</button>
+  <h1>💖 Felices 21 💖</h1>
+  <p>
+    Hoy no solo celebramos tu cumpleaños,<br>
+    celebramos lo increíble que eres ✨
+  </p>
+  <button onclick="mostrar()">Abrir mi mensaje 💌</button>
   <div id="mensaje"></div>
 </div>
 
 <script>
   function mostrar() {
     document.getElementById("mensaje").innerHTML =
-      "✨ ¡Felices 21! ✨<br>" +
-      "Que esta nueva etapa llegue con sueños cumplidos,<br>" +
-      "momentos inolvidables y muchas razones para sonreír 💖<br>" +
-      "Hoy celebramos tu vida y todo lo especial que eres 🎂🎉";
+      "✨ Felices 21 ✨<br>" +
+      "Que esta nueva etapa te abrace con amor,<br>" +
+      "sonrisas sinceras y momentos que se queden en el corazón 💖<br><br>" +
+      "Gracias por existir y por hacer el mundo más bonito 🎂💫";
   }
 
   function crearCorazon() {
@@ -126,24 +120,15 @@
     h.className = "heart";
     h.innerHTML = "❤";
     h.style.left = Math.random() * 100 + "vw";
-    h.style.fontSize = Math.random() * 18 + 16 + "px";
+    h.style.fontSize = Math.random() * 22 + 18 + "px";
     h.style.animationDuration = Math.random() * 3 + 5 + "s";
     document.body.appendChild(h);
-    setTimeout(() => h.remove(), 8000);
+    setTimeout(() => h.remove(), 9000);
   }
 
-  function crearConfeti() {
-    const c = document.createElement("div");
-    c.className = "confeti";
-    c.style.left = Math.random() * 100 + "vw";
-    c.style.animationDuration = Math.random() * 3 + 4 + "s";
-    document.body.appendChild(c);
-    setTimeout(() => c.remove(), 7000);
-  }
-
-  setInterval(crearCorazon, 400);
-  setInterval(crearConfeti, 300);
+  setInterval(crearCorazon, 320);
 </script>
 
 </body>
 </html>
+
